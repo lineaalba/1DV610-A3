@@ -43,7 +43,7 @@ class LoginController {
 				return $this->loginUser($username, $password);
             }	
             $this->mainModel->setMessage($message); 
-        } elseif ($this->loginView->userWantsToLogOut()) {       
+        } elseif ($this->loginView->userWantsToLogOut() && $this->isLoggedIn) {       
             $this->loginModel->setIsLoggedIn(false);
             $this->mainModel->unsetSessionUsername();
 
