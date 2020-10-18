@@ -23,7 +23,6 @@ class MainModel {
 
     public function getSessionUsername() {
         if (isset($_SESSION[self::$SESSION_USERNAME])) {
-            print_r($_SESSION[self::$SESSION_USERNAME]);
             return $_SESSION[self::$SESSION_USERNAME];
         } else {
             return '';
