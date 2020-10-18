@@ -9,6 +9,7 @@ class RegisterModel {
 
     public function removeInvalidCharacters($username) {
         $username = strip_tags($username);
+        return $username;
     }
 
     public function noUserInputs($username, $password) : bool {

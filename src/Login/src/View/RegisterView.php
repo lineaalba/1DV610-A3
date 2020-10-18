@@ -10,7 +10,6 @@ class RegisterView {
     private static $registerLink = 'register';
     private static $register = 'RegisterView::Register';
 
-
     public function userClicksRegisterLink() : bool {
         if (isset($_GET[self::$registerLink])) {
             return true;
@@ -49,7 +48,7 @@ class RegisterView {
         return  '<a href="?' . self::$registerLink . '">Register a new user</a>';
     }
 
-    public function generateRegisterFormHTML($message) {  
+    public function generateRegisterFormHTML($message) { 
         $mainModel = new \Model\MainModel();
         $mainModel->unsetSession();
         
