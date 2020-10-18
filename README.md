@@ -1,19 +1,10 @@
 ## 1dv610 A3: PHP Quiz with login
 
-### Todo Quiz module:
-- New question after clicked next
-- Feedback to user if answer was correct
-- Connect user with logged in username
-- Save to highscore
+### Instructions to run application
+- Clone down the repository, using Git clone.
+- Download XAMPP Control Panel.
+- At the XAMPP Control Panel: click "Config" and choose "Apache (httpd.conf)".
+- Change DocumentRoot and Directory to your directory for the source code.
+- Click "Start" at the Apache field and browse to localhost:80
 
-### Todo Login module:
-- Refactor to more object oriented code
-- Encrypt password
-- /register in url even after faild register attempt
-- Move session methods from LoginModel and RegisterModel to DAL
-- Move data loading from LoginModel and RegisterModel to DAL
-
-### Both
-- Add comments to methods that needs to be explained
-- More error handling
-- Add CSS
+To access the public site, visit https://1dv610-a3.000webhostapp.com/
