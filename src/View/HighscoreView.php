@@ -18,10 +18,10 @@ class HighscoreView {
     
         foreach($array as $key => $value) {
             return '
-            <div>
-                <h4>' . $key . ' : ' . $value . '</h4>
-            </div>';
-            
-          }
+                <div>
+                    <h4>' . $key . ' : ' . $value . '</h4>
+                </div>
+            ';    
+        }
     }
 }

@@ -3,7 +3,6 @@
 session_start();
 
 class Settings {
-
 	private static $quesitionDataFolder = "../data/questions";
 	private static $highscoreDataFolder = "../data/highscores";
 

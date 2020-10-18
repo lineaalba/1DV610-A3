@@ -23,10 +23,6 @@ class QuestionView {
         $this->questionModel = $toBeShown;
     }
 
-    // public static function getCorrectAnswer() {
-    //     return $this->answer;
-    // }
-
     public function getQuestionHTML() : string {
         $title = $this->questionModel->getTitle();
         $answer = $this->questionModel->getAnswer();
@@ -43,22 +39,22 @@ class QuestionView {
         shuffle($array);
        
         return '
-        <div>
-            <h3>' . $title . '</h3>
-        </div>
-        <div>
-            <form action="" method="post" > 
-                <label><input type="radio" name="' . self::$radio . '" value="' . $array[0] . '">' . $array[0] . '</label>
-                <br>
-                <label><input type="radio" name="' . self::$radio . '" value="' . $array[1] . '">' . $array[1] . '</label>
-                <br>
-                <label><input type="radio" name="' . self::$radio . '" value="' . $array[2] . '">' . $array[2] . '</label>
-                <br>
-                <label><input type="radio" name="' . self::$radio . '" value="' . $array[3] . '">' . $array[3] . '</label>
-                <br><br>
-                <input type="submit" name="' . self::$next . '" value="Next">
-            </form>   
-        </div>         
+            <div>
+                <h3>' . $title . '</h3>
+            </div>
+            <div>
+                <form action="" method="post" > 
+                    <label><input type="radio" name="' . self::$radio . '" value="' . $array[0] . '">' . $array[0] . '</label>
+                    <br>
+                    <label><input type="radio" name="' . self::$radio . '" value="' . $array[1] . '">' . $array[1] . '</label>
+                    <br>
+                    <label><input type="radio" name="' . self::$radio . '" value="' . $array[2] . '">' . $array[2] . '</label>
+                    <br>
+                    <label><input type="radio" name="' . self::$radio . '" value="' . $array[3] . '">' . $array[3] . '</label>
+                    <br><br>
+                    <input type="submit" name="' . self::$next . '" value="Next">
+                </form>   
+            </div>         
         ';
     }
 }

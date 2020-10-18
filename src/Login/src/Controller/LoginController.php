@@ -6,7 +6,6 @@ require_once('Login/src/Model/LoginModel.php');
 require_once('Login/src/Model/MainModel.php');
 require_once('Login/src/View/LoginView.php');
 
-
 class LoginController {
 	private $loginView;
     private $loginModel;
@@ -52,7 +51,6 @@ class LoginController {
             $this->mainModel->setMessage($message);
         } 
     }
-
 
     private function loginUser($username, $password) {
         if ($this->loginModel->isUserInFile($username, $password)) {

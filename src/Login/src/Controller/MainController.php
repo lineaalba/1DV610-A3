@@ -79,7 +79,6 @@ class MainController {
             } elseif ($this->registerView->userClicksRegisterLink() == true) {
                 return $this->registerView->generateRegisterFormHTML($message);
             } elseif ($this->registerView->userWantsToRegister() && $this->mainModel->getMessage() != $this->registerView->newUserRegistredMessage()) {
-               // behålla /register i url
                 return $this->registerView->generateRegisterFormHTML($message);
             } elseif ($this->registerView->userWantsToRegister() && $this->mainModel->getMessage() == $this->registerView->newUserRegistredMessage()) {
                 return $this->loginView->generateLoginFormHTML($username, $message);

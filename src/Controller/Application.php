@@ -21,7 +21,6 @@ require_once("Login/src/Controller/MainController.php");
 require_once("Login/src/Model/LoginModel.php");
 require_once("Login/src/LoginSettings.php");
 
-
 class Application {
     private $userAnswerStorage;
     private $correctAnswerStorage;
@@ -35,7 +34,6 @@ class Application {
         $this->correctAnswerStorage = new \Model\DAL\CorrectAnswerSessionStorage(); 
         $this->highscoreStorage = new \Model\DAL\HighScoreStorage($this->settings->getHighscoreFolder());
         $this->jsonStorage = new \Model\DAL\FileQuestionStorage($this->settings->getDataFolder());
-        
     }
 
     public function login() {

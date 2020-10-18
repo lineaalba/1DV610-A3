@@ -6,10 +6,6 @@ require_once("QuestionView.php");
 require_once("StartButtonView.php");
 
 class QuizView {
-
-    // private static $urlMessageIndex = "message";
-    // private static $messageSessionIndex = "View\\Shop::messageSessionIndex";
-
     private $questionBankToBeShown;
 
     public function __construct(\Model\QuestionBank $toBeShown) {
@@ -45,10 +41,6 @@ class QuizView {
         return QuestionView::getUserAnswer();
     }
 
-    // public function getCorrectAnswer() {
-    //     return QuestionView::getCorrectAnswer();
-    // }
-
     private function getStartButtonHTML() : string {
         $startButtonView = new \View\StartButtonView();
         $ret = "";
@@ -61,17 +53,13 @@ class QuizView {
         $questionsToShow = $this->questionBankToBeShown->getAll();
         $questionViews = array();
         foreach ($questionsToShow as $question) {
-           
             $questionViews[] = new QuestionView($question);
-           
             $randomQuestion = $questionViews[array_rand($questionViews)];        
         }
+
+        $ret = "";
+        $ret .= $randomQuestion->getQuestionHTML();
     
-            $ret = "";
-        
-            $ret .= $randomQuestion->getQuestionHTML();
-    
-            return $ret; 
-           
+        return $ret;   
     }
 }

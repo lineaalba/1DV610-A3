@@ -10,7 +10,6 @@ class LayoutView {
     private $renderIsLoggedIn;
     private $correctHTML;
 
-
     public function __construct(string $link, string $renderIsLoggedIn, string $correctHTML) {
         $this->dateTimeView = new \View\DateTimeView();
         $this->link = $link;

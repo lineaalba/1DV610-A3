@@ -14,10 +14,12 @@ class StartButtonView {
     }
 
     public function getStartButtonHTML() : string {
-       return ' <div>
-            <form action="" method="post" > 
-            <input type="submit" name="' . self::$start . '" value="Start quiz">
-            </form>   
-        </div> ';
+       return ' 
+            <div>
+                <form action="" method="post" > 
+                    <input type="submit" name="' . self::$start . '" value="Start quiz">
+                </form>   
+            </div>
+        ';
     }
 }

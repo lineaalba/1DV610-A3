@@ -2,7 +2,6 @@
 
 namespace Model;
 
-
 class LoginModel {
     private static $SESSION_LOGGEDIN = __CLASS__ . "::loggedin";
     private static $SESSION_BROWSER_INFO = __CLASS__ . "::browserInfo";
@@ -35,19 +34,5 @@ class LoginModel {
         } else {
             return false;
         }
-        // $accountsFile = fopen('../data/accounts.txt', 'r');
-
-        // while(!feof($accountsFile)) {
-        //     $line = fgets($accountsFile);
-        //     list($user, $pass) = explode(':', $line);
-        //     if(trim($user) == $username && trim($pass) == $password){
-        //         return true;
-        //     break;
-        //     } else {
-        //         return false;
-        //     }
-        // }
-
-        // fclose($file);
     }
 }

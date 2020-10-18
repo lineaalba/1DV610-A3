@@ -23,14 +23,6 @@ class QuizController {
             $this->userAnswer->add($answer);
             $answers = $this->userAnswer->getAnswers();
 
-            // if ($this->quizView->getCorrectAnswer()) {
-            // $correctAnswer = $this->quizView->getCorrectAnswer();
-            // print_r($correctAnswer);
-            // }
-            // $this->correctAnswer->add($correctAnswer);
-            // $correctAnswers = $this->correctAnswer->getCorrectAnswers();
-
-            // $this->correctAnswerView->getHTML();
             $this->userAnswerView->getHTML();
         }
     }

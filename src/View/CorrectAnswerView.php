@@ -17,7 +17,6 @@ class CorrectAnswerView {
 		$ret = "<h2>Correct answers:</h2>";
 		$ret .= "<ol>";
 		foreach ($correctAnswers as $correctAnswer) {
-			
 			$ret .= "<li>$correctAnswer</li>";
 		}
         $ret .= "</ol>";

@@ -3,7 +3,6 @@
 namespace Model;
 
 class QuestionModel {
-
     private $title;
     private $answer;
     private $answerOptionTwo;

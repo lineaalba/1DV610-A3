@@ -8,10 +8,8 @@ class RegisterModel {
     private static $PASSWORD_MIN_LENGTH = 6;
 
     public function removeInvalidCharacters($username) {
-        // $_SESSION[$SESSION_USERNAME] = strip_tags($username);
         $username = strip_tags($username);
     }
-
 
     public function noUserInputs($username, $password) : bool {
         if (strlen($username) == 0 && strlen($password) == 0) {
@@ -53,19 +51,7 @@ class RegisterModel {
         }
     }
 
-    // Move to DAL?
     public function userExists($username) : bool {
-        // $accountsFile = fopen('../data/accounts.txt', 'r');
-
-        // if (fwrite($accountsFile, $username)) {
-
-        //     return true;
-        // } else {
-        //     return false;
-        // }
-        // fclose($accountsFile);
-
-
         $accountsFile = "Login/data/accounts.txt";
 
         $contents = file_get_contents($accountsFile);
@@ -79,7 +65,6 @@ class RegisterModel {
         }
     }
 
-    // Move to DAL?
     public function saveUserToFile($username, $password) {
         $credentials = $username . ":" . $password . "\n";
 

@@ -16,10 +16,10 @@ class UserAnswerView {
 		$ret = "";
 		$ret = "<h2>Your answers:</h2>";
 		$ret .= "<ol>";
-		foreach ($userAnswers as $userAnswer) {
-			
+		foreach ($userAnswers as $userAnswer) {	
 			$ret .= "<li>$userAnswer</li>";
 		}
+
         $ret .= "</ol>";
     
 		echo $ret;

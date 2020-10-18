@@ -40,15 +40,15 @@ class LoginView {
         }
     }
 
-    // public function showLink($isLoggedIn) {
-    //     if (!$isLoggedIn) {
-    //         if ($this->registerView->userClicksRegisterLink()) {
-    //             return '<a href="/">Back to login</a>';
-    //         } elseif (!$isLoggedIn || $this->userWantsToLogout()) {
-    //             return = $this->registerView->registerNewUserLink();
-    //         }
-    //     }
-    // }
+    public function showLink($isLoggedIn) {
+        if (!$isLoggedIn) {
+            if ($this->registerView->userClicksRegisterLink()) {
+                return '<a href="/">Back to login</a>';
+            } elseif (!$isLoggedIn || $this->userWantsToLogout()) {
+                return = $this->registerView->registerNewUserLink();
+            }
+        }
+    }
 
     public function renderIsLoggedIn($isLoggedIn) {
         if (!$isLoggedIn) {

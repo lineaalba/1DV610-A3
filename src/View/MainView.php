@@ -5,7 +5,6 @@ namespace View;
 require_once("HighscoreView.php");
 
 class MainView {
-
     private $highscoresToBeShown;
 
     public function __construct(\Model\HighScoreBank $toBeShown) {
@@ -26,7 +25,6 @@ class MainView {
         }
         $ret = "";
         foreach ($highscoreViews as $hview) {
-           
             $ret .= $hview->getHighscoreHTML();
         }
         

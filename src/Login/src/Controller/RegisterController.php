@@ -23,24 +23,23 @@ class RegisterController {
             $password = $this->registerView->getPassword();
             $repeatedPassword = $this->registerView->getRepeatedPassword();
             $this->mainModel->setSessionUsername($username);
-            $message = '';
             if ($this->registerView->containsInvalidCharacters($username)) {
                 $this->registerModel->removeInvalidCharacters($username);
-                $message .= $this->registerView->invalidCharactersMessage();
+                $message = $this->registerView->invalidCharactersMessage();
             } elseif ($this->registerModel->noUserInputs($username, $password)) {
-                $message .= $this->registerView->noInputsMessage();
+                $message = $this->registerView->noInputsMessage();
             } elseif ($this->registerModel->tooShortUsername($username)) {
-                $message .= $this->registerView->tooShortUsernameMessage();
+                $message = $this->registerView->tooShortUsernameMessage();
             } elseif ($this->registerModel->tooShortPassword($password)) {
-                $message .= $this->registerView->tooShortPasswordMessage();
+                $message = $this->registerView->tooShortPasswordMessage();
             } elseif ($this->registerModel->noRepeatedPassword($repeatedPassword)) {
-                $message .= $this->registerView->passwordsDoNotMatchMessage();
+                $message = $this->registerView->passwordsDoNotMatchMessage();
             } elseif ($this->registerModel->passwordsDoNotMatch($password, $repeatedPassword)) {
-                $message .= $this->registerView->passwordsDoNotMatchMessage();
+                $message = $this->registerView->passwordsDoNotMatchMessage();
             } elseif ($this->registerModel->userExists($username)) {
-                $message .= $this->registerView->userExistsMessage();
+                $message = $this->registerView->userExistsMessage();
             } elseif ($username && $password) {
-                $message .= $this->registerView->newUserRegistredMessage();
+                $message = $this->registerView->newUserRegistredMessage();
                 $this->registerModel->saveUserToFile($username, $password);
                 $this->mainModel->setSessionUsername($username);
             }  
