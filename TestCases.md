@@ -6,7 +6,7 @@ User is logged in.
 User clicks button "Start quiz".
 #### Output
 System displays a question with answer options.
-## Success
+#### Success
 ### TC2 Watch highscore list without login
 #### Precondition
 None
@@ -14,7 +14,7 @@ None
 User visits https://1dv610-a3.000webhostapp.com/.
 #### Output
 System outputs highscore list.
-## Success
+#### Success
 
 ### TC3 End quiz game
 #### Precondition
@@ -23,4 +23,4 @@ TC1 succeeded.
 User answers all questions.
 #### Output
 System outputs number of correct answers.
-## Fail
+##### Fail
