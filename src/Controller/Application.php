@@ -19,21 +19,28 @@ require_once("View/UserAnswerView.php");
 require_once("View/CorrectAnswerView.php");
 require_once("Login/src/Controller/MainController.php");
 require_once("Login/src/Model/LoginModel.php");
+require_once("Login/src/LoginSettings.php");
 
 
 class Application {
+    private $userAnswerStorage;
+    private $correctAnswerStorage;
+    private $highscoreStorage;
     private $jsonStorage;
+    private $settings;
 
     public function __construct(\Settings $settings) {
+        $this->settings = $settings;
         $this->userAnswerStorage = new \Model\DAL\UserAnswerSessionStorage();
         $this->correctAnswerStorage = new \Model\DAL\CorrectAnswerSessionStorage(); 
-        $this->highscoreStorage = new \Model\DAL\HighScoreStorage($settings->getHighscoreFolder());
-        $this->jsonStorage = new \Model\DAL\FileQuestionStorage($settings->getDataFolder());
-        $this->settings = $settings;
+        $this->highscoreStorage = new \Model\DAL\HighScoreStorage($this->settings->getHighscoreFolder());
+        $this->jsonStorage = new \Model\DAL\FileQuestionStorage($this->settings->getDataFolder());
+        
     }
 
     public function login() {
-        $loginController = new \Controller\MainController();
+        $loginSettings = new \LoginSettings();
+        $loginController = new \Controller\MainController($loginSettings);
         $loginController->run();
 
         $loginModel = new \Model\LoginModel();
@@ -55,9 +62,7 @@ class Application {
             $this->correctAnswerView = new \View\CorrectAnswerView($this->correctAnswer);
             
             $this->handleInput();
-
             $this->saveState();
-
             $this->generateOutput();
     
         } catch (\Exception $e) {

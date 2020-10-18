@@ -118,10 +118,8 @@ class LoginView {
 					
 					<label for="' . self::$username . '">Username :</label>
 					<input type="text" id="' . self::$username . '" name="' . self::$username . '" value="' . (isset($_POST[self::$username]) ? $_POST[self::$username] : "") . '" />
-
 					<label for="' . self::$password . '">Password :</label>
 					<input type="password" id="' . self::$password . '" name="' . self::$password . '" />
-
 					<label for="' . self::$keep . '">Keep me logged in  :</label>
 					<input type="checkbox" id="' . self::$keep . '" name="' . self::$keep . '" />
 					

@@ -1,4 +1,5 @@
 # Todo Quiz module:
+- Write use cases
 - New question after clicked next
 - Connect user with logged in username
 - Save highscore
@@ -7,6 +8,7 @@
 - Refactor to more object oriented code
 - Encrypt password
 
-# Other
-- Write use cases
-- Add CSS
+# Both
+- Add comments to methods that needs to be explained
+- More error handling
+- (Add CSS)

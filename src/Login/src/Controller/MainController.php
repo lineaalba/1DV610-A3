@@ -2,7 +2,7 @@
 
 namespace Controller;
 
-require_once("Login/src/Model/DAL/UserSessionStorage.php");
+require_once("Login/src/Model/DAL/LoginSessionStorage.php");
 require_once("Login/src/Controller/RegisterController.php");
 require_once("Login/src/Controller/LoginController.php");
 require_once("Login/src/Model/LoginModel.php");
@@ -12,7 +12,7 @@ require_once("Login/src/View/LoginView.php");
 require_once("Login/src/View/RegisterView.php");
 
 class MainController {
-    private $sessionStorage;
+    private $loginSessionStorage;
     private $registerController;
     private $loginController;
     private $loginModel;
@@ -21,7 +21,7 @@ class MainController {
     private $registerView;
 
     public function __construct() {
-       $this->sessionStorage = new \Model\DAL\UserSessionStorage();
+       $this->loginSessionStorage = new \Model\DAL\LoginSessionStorage();
        $this->registerController = new \Controller\RegisterController();
        $this->loginController = new \Controller\LoginController();
        $this->loginModel = new \Model\LoginModel();
@@ -31,17 +31,30 @@ class MainController {
     }
     
     public function run() {
-        $loggedInUsers = $this->sessionStorage->getFromSessionOrEmpty(); // Load from storage
+        try {
 
-        $this->changeState();
-        $this->generateOutput();
-     
-        $this->sessionStorage->saveToSessionStorage($loggedInUsers); // Save to storage
+            $this->loadState();
+            $this->handleInput();
+            $this->saveState();
+            $this->generateOutput();
+            
+        } catch (\Exception $e) {
+            echo "Sorry, something went wrong =(";
+            error_log("Error when loading data" . $e);
+        }
     }
 
-    private function changeState() {            
+    private function loadState() {   
+        $this->loggedInUsers = $this->loginSessionStorage->getFromSessionOrEmpty(); // Load from storage           
+    }
+
+    private function handleInput() {
         $this->registerController->checkForInputs();  
         $this->loginController->checkForInputs();
+    }
+
+    private function saveState() {
+        $this->loginSessionStorage->saveToSessionStorage($this->loggedInUsers); // Save to storage
     }
 
     private function generateOutput() {

@@ -8,7 +8,7 @@ class UserAnswerSessionStorage {
 
     public function __construct() {
         if ($this->isSessionStarted() == FALSE) {
-            throw new \Excetion("Session must be started for UserAnswerSessionStorage class to work");
+            throw new \Exception("Session must be started for UserAnswerSessionStorage class to work");
         }
     }
 

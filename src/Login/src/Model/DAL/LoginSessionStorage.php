@@ -2,7 +2,7 @@
 
 namespace Model\DAL;
 
-class UserSessionStorage {
+class LoginSessionStorage {
     private static $sessionIndex = "UserSessionStorage::index";
 
     public function __construct() {
