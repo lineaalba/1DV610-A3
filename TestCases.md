@@ -1,7 +1,7 @@
 ## Test Cases PHP Quiz
 ### TC1 Start Quiz
 #### Precondition
-User is loged in.
+User is logged in.
 #### Input
 User clicks button "Start quiz".
 #### Output
@@ -11,7 +11,7 @@ System displays a question with answer options.
 #### Precondition
 None
 #### Input
-User browses to https://1dv610-a3.000webhostapp.com/.
+User visits https://1dv610-a3.000webhostapp.com/.
 #### Output
 System outputs highscore list.
 ## Success
